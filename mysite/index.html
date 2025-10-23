@@ -6,34 +6,51 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>홍길동</h1>
-    <div>
-        <a href="#">소개</a>
-        <a href="#">기술</a>
-        <a href="#">프로젝트</a>
-        <a href="#">연락처</a>
-    </div>
-    <h2>소개</h2>
-    <p>웹 개발을 막 시작한 입문자다</p>
-    <img src="../imges/강아지.png">
-    <p>첫 프로젝트를 기록 중이다.</p>
-    <h2>기술</h2>
-    <list>
-        <li>HTML5의 시맨틱 마크업이다</li>
-        <li>기본 CSS 선택지를 조금 안다</li>
-        <li>개발자 도구 사용을 시작한다</li>
-    </list>
-    <h2>프로젝트</h2>
-    <h3>나의 첫 웹페이지</h3>
-    <p>시맨틱 태그의 접근성을 고려해 작성했다.</p>
-    <p>
-        <time datetime="2025-10-21">2025년 10월 21일</time>
-    </p>
-    <h2>배운점</h2>
-    <p>문서 구조가 명확하면 스타일과 동작을 더 쉽게 얹을 수 있다.</p>
-    <h2>연락처</h2>
-    <ul>
-                <li><a href="이메일">이메일</a></li>
+    <header>
+        <h1>윤혜리</h1>
+        <nav>
+            <a href="I">소개</a>
+            <a href="S">기술</a>
+            <a href="P">프로젝트</a>
+            <a href="C">연락처</a>
+        </nav>
+    </header>
+    <main>
+        <section id="I">
+            <h2>소개</h2>
+            <p>웹 개발을 막 시작한 입문자다</p>
+            <img src="../imges/강아지.png">
+            <p>첫 프로젝트를 기록 중이다.</p>
+        </section>
+        <section id="S">
+            <h2>기술</h2>
+            <list>
+                <li>HTML5의 시맨틱 마크업이다</li>
+                <li>기본 CSS 선택지를 조금 안다</li>
+                <li>개발자 도구 사용을 시작한다</li>
+            </list>
+        </section>
+        <section id="P">
+            <h2>프로젝트</h2>
+            <h3>나의 첫 웹페이지</h3>
+            <article>
+                <p>시맨틱 태그의 접근성을 고려해 작성했다.</p>
+                <p><time datetime="2025-10-21">2025년 10월 21일</time></p>
+                <h2>배운점</h2>
+                <p>문서 구조가 명확하면 스타일과 동작을 더 쉽게 얹을 수 있다.</p>
+            </article>
+        </section>
+        <section id="C">
+        <aside>
+            <h2>연락처</h2>
+            <ul>
+                <span style="font-style: italic"><a href="https://developer.mozilla.org/ko/">cakesopdj@gmail.com</a>
             </ul>
+        </aside>
+        </section>
+    </main>
+    <footer id="contact">
+    <small>&copy; 2025 윤혜리이다</small>
+  </footer>
 </body>
 </html>
