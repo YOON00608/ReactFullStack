@@ -5,46 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>개발자 포트폴리오-윤혜리</title>
     <style>
-        /* 바디 디자인 */
+        /* ============ 공통 스타일 ============ */
         body {
+        /* 배경: 살짝 그라데이션 느낌 나는 단색 계열 */
         background: linear-gradient(to right, #ffffff, #ffcfe9);
         font-family: system-ui, sans-serif;
         color: #22120f;
-        margin: 0; }
+        margin: 0; /* 기본 여백 제거 (브라우저 기본 스타일 초기화 느낌) */ }
 
-        /* 컨테이너(안쪽) 디자인 */
+        /* 컨테이너 개념: 폭을 제한하고 가운데 정렬하는 공통 레이아웃 박스 */
         .container {
-        max-width: 1000px; 
-        background: #ffffff; 
-        margin: 20px auto;
+        max-width: 1000px; /* 너무 넓어지지 않게 가로 제한 */
+        background: #fff; 
+        margin: 20px auto; /* 위아래 20px, 좌우 auto -> 가로 가운데 정렬 */
         padding: 20px; 
         border-radius: 12px; 
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); }
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); }
 
         /*프로필 이미지 디자인  */
        .profile-image {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%; 
-        border: 2px solid #ff67a1; 
+        width: 140px;
+        height: 140px;
+        border-radius: 50%; /* 완전 동그라미 */
+        border: 3px solid #ff67a1; 
         aspect-ratio: 1 / 1;
-        object-fit: cover; 
+        object-fit: cover; /* 이미지 비율 망가지지 않게 잘라서 맞춤 */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
 
-        /* 프로필 헤더 디자인 */
+        /* 헤더 전체 레이아웃: 사진 - 텍스트 영역을 가로로 배치 */
         header.profile-header {
-        display: flex; 
+        display: flex; /* 가로 정렬(flex 기본 방향: row) */
         align-items: center; 
-        gap: 20px; 
+        gap: 20px; /* 요소 사이 간격 */
         padding-bottom: 20px;
         border-bottom: 2px solid #eee; }
 
-        /* 소개글 제목 디자인 */
+       /* 이름/직무/소개 글 부분 */
       .intro-text h1 {
         font-size: 1.8rem;
         color: #2c3e50;
         margin: 0 0 8px 0;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 글자에 은은한 그림자 */}
 
         /* 소개글 A 디자인 */
       .intro-text p.A {
@@ -59,7 +60,7 @@
         margin: 0;
         color: #555;    }
 
-        /* 섹션 제목 디자인 */
+        /* 섹션 공통 제목 스타일 */
       section h2 {
         font-size: 1.3rem;
         color: #2c3e50;
@@ -67,15 +68,15 @@
         margin-bottom: 12px;
         border-left: 6px solid #ff4775; 
         padding-left: 10px;
-        text-shadow: 0 2px 4px rgba(155, 89, 182, 0.15); }
+        text-shadow: 0 2px 4px rgba(235, 97, 216, 0.15); }
 
-        /* 프로젝트 컨테이너 디자인  */
+        /* 프로젝트 카드를 감사는 컨테이너 */
       .project-container {
         display: flex;
-        flex-wrap: wrap; 
+        flex-wrap: wrap; /* 줄바꿈 허용 */
         gap: 16px;  }
 
-         /* 섹션 카드 디자인 */
+        /* "스킬 목록", "프로젝트 카드" 등 반복되는 박스 */
       .card {
         background: #f8f9fc;
         border: 1px solid #dfe6e9;
@@ -84,21 +85,21 @@
         margin-bottom: 16px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); }
 
-        /* 프로젝트 카드 디자인 */
+        /* 프로젝트 컨테이너 안에 들어있는 카드*/
       .project-container .card {
         width: 450px;   }
 
-        /* 섹션 카드 제목 디자인 */
+        /* 카드 안의 소제목 */
       .card-title {
         font-weight: bold;
         color: #2c3e50;
         margin-bottom: 8px; }
 
-      /* 프로젝트 년도 위치 */
+      /* 프로젝트 영역: 제목(왼쪽) + 기간(오른쪽) 같은 2개 텍스트를 한 줄에 배치 */
       .project-top-row {
         display: flex;
-        justify-content: space-between; 
-        flex-wrap: wrap; 
+        justify-content: space-between; /* 좌우로 벌리기 */
+        flex-wrap: wrap; /* 화면이 좁아지면 줄바꿈 허용 */
         margin-bottom: 6px; }
 
       /* 프로젝트 제목 디자인 */
@@ -117,7 +118,7 @@
         line-height: 1.5;
         color: #555;    }
       
-        /* 연락처 디자인 */
+         /* 하단 연락 영역(footer) */
       footer.contact {
         margin-top: 32px;
         padding-top: 20px;
@@ -126,7 +127,7 @@
         color: #444;
         line-height: 1.6;   }
      
-        /* 연락처 링크 색 디자인 */
+        /* 링크 스타일 */
       a {
         color: #3498db;
         text-decoration: none;
@@ -135,40 +136,47 @@
     </style>
 </head>
 <body>
-     <!-- 컨테이너 -->
+     <!-- 전체 레이아웃을 감싸는 컨테이너 -->
     <div class="container">
 
-      <!-- 프로필의 헤더 -->
+      <!-- 프로필 영역 : 시맨틱 태그 -->
       <header class="profile-header">
 
-        <!-- 이미지 -->
+        <!-- 프로필 이미지 -->
         <img
           src="../imges/profile.png"
           alt="프로필 이미지"
           class="profile-image" />
 
-        <!-- 이름, 인트로 텍스트 -->
+        <!-- 이름/직무/소개 -->
         <div class="intro-text">
-          <h1>
+          
+            <h1>
             윤혜리
-            <span style="font-size: 1rem; color: #888"
-              >/ Front-End Developer</span>
+            <span style="font-size: 1rem; color: #888">
+                / Front-End Developer
+            </span>
           </h1>
+
           <p class="A">초보 웹 개발자 · HTML/CSS 학습 중</p>
+         
           <p class="B">
             사용자가 보기 편한 화면을 만드는 것에 관심이 많다. 시맨틱 태그를
             사용해서 구조를 명확하게 작성하려고 노력하고 있으며 간단한 레이아웃,
             텍스트 스타일링, 배경, 그림자 효과 등을 구현할 수 있다.
           </p>
+       
         </div>
       </header>
 
-        <!-- 섹션1, 카드형 나누기 -->
+        <!-- 기술 스킬 영역: 시맨틱 태그 section 사용 -->
       <section>
+       
         <h2>기술 스택 / 사용 가능 기술</h2>
 
         <div class="card">
-          <div class="card-title">HTML</div>
+          
+        <div class="card-title">HTML</div>
           <p class="card-desc">
             <ul>
                 <li>시맨틱 태그(header, nav, main, section, footer)를
@@ -199,18 +207,19 @@
         </div>
       </section>
 
-      <!-- 섹션2, 프로젝트 -->
+      <!-- 프로젝트 영역 -->
       <section>
         <h2>프로젝트</h2>
-        
+        <!-- 프로젝트 영역 컨테이너 -->
         <div class="project-container">
          
+          <!-- 프로젝트 1 -->
           <div class="card">
             <div class="project-top-row">
               <div class="project-name">포트폴리오 페이지 만들기</div>
               <div class="project-period">2025.10 - 진행중</div>
             </div>
-            
+
             <p class="project-desc">
               HTML 시맨틱 태그와 CSS 기본 스타일만으로 개인 포트폴리오 페이지를
               제작했다 박스 모델, 여백, 테두리, 그림자 등을 이용해 카드 형태의
@@ -218,7 +227,8 @@
               정렬했다
             </p>
           </div>
-
+           
+          <!-- 프로젝트 2 -->
           <div class="card">
             <div class="project-top-row">
               <div class="project-name">간단한 소개 랜딩 페이지</div>
@@ -234,7 +244,7 @@
         </div>
       </section>
 
-      <!-- 연락처 -->
+      <!-- 연락처 영역: footer 시맨틱 태그 -->
           <footer class="contact">
 
         <h2>연락처</h2>
@@ -254,5 +264,6 @@
         </p>
       </footer>
     </div>
+    <!-- .container 끝 -->
 </body>
 </html>
