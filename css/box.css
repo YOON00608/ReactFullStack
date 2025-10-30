@@ -1,32 +1,32 @@
 .box{
-            width: 100px;
-            height: 100px;
-            text-align: center;
-            color: white;
-            border: 2px solid black;
-            margin: 10px;
-        }
+    width: 100px;
+    height : 100px;
+    text-align : center;
+    color:white;
+    border : 2px solid black;
+    margin: 10px;
+}
 
-        .a{
-            background-color: yellowgreen;
-        }
+.a{
+    background-color: yellowgreen;
+}
 
-        .b{
-            background-color: violet;
-        }
+.b{
+    background-color : violet;
+}
 
-        .c{
-            background-color: cornflowerblue;
-        }
+.c{
+    background : cornflowerblue;
+}
 
-        .d{
-            background-color: tomato;
-        }
-        
-        .e{
-            background-color: yellow;
-        }
+.d{
+    background-color: orange;
+}
 
-        .f{
-            background-color: tan;
-        }
+.e{
+    background-color : tomato;
+}
+
+.f{
+    background : tan;
+}
