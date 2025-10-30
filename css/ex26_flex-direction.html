@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex-direction</title>
+    <style>
+        section{
+            display: flex;
+            border: 1px dashed #000;
+            margin-bottom: 20px;
+        }
+
+        /* 가로 배치 */
+        .row{
+            flex-direction: row;
+        }
+
+        /* 가로 역방향 배치 */
+        .row-reverse{
+            flex-direction: row-reverse;
+        }
+
+        /* 세로 배치 */
+        .column{
+            flex-direction: column;
+        }
+
+        /* 세로 역방향 배치 */
+        .column-reverse{
+            flex-direction: column-reverse;
+        }
+    </style>
+    <link href="box.css" rel="stylesheet">
+    
+</head>
+<body>
+    <h3>row</h3>
+    <section class="row">
+        <div class="box a">01</div>
+        <div class="box b">02</div>
+        <div class="box c">03</div>
+    </section>
+
+    <h3>row-reverse</h3>
+    <section class="row-reverse">
+        <div class="box a">01</div>
+        <div class="box b">02</div>
+        <div class="box c">03</div>
+    </section>
+
+    <h3>column</h3>
+    <section class="column">
+        <div class="box a">01</div>
+        <div class="box b">02</div>
+        <div class="box c">03</div>
+    </section>
+
+    <h3>column-reverse</h3>
+    <section class="column-reverse">
+        <div class="box a">01</div>
+        <div class="box b">02</div>
+        <div class="box c">03</div>
+    </section>
+</body>
+</html>
