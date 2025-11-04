@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Others</title>
     <style>
+        /* :not 사용 */
+        /* highlight클래스값이 없는 p태그를 선택하여 글씨색을 바꿈 */
         p:not(.highlight){
             color: tomato;
         }
 
+        /* :lang 사용 */
         p:lang(ko){
             font-style: italic;
             color: cornflowerblue;
