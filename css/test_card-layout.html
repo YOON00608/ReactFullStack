@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 카드 레이아웃</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            margin: 0;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 40px;
+        }
+
+        .card {
+            background-color: cornflowerblue;
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 18px;
+            flex: 1;
+    }
+
+        @media(min-width: 768px){
+            .container {
+            flex-direction: row;
+        }
+      }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">박스 1</div>
+    <div class="card">박스 2</div>
+  </div>
+</body>
+</html>
