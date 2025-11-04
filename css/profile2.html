@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<title>BEM 버튼 컴포넌트 예제</title>
+<style>
+  /* 🔹 Block */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* 아이콘과 텍스트 사이 간격 */
+    padding: 10px 16px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #fff;
+    transition: opacity 0.2s;
+  }
+
+  .container{
+    padding : 20px;
+    text-align: center;
+  }
+
+  /* 🔹 Element */
+  .btn__text {
+    font-weight: 500;
+  }
+
+  /* 🔹 Modifier - success */
+  .btn--success {
+    background-color: #2ecc71;
+  }
+
+  /* 🔹 Modifier - disabled */
+  .btn--disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+
+  /* hover 효과 (disabled에는 적용 안 됨) */
+  .btn:not(.btn--disabled):hover {
+    opacity: 0.85;
+  }
+</style>
+</head>
+<body>
+
+  <h2 style="text-align:center;">BEM 버튼 컴포넌트 예제</h2>
+
+  <div class="container">
+    <!-- ✅ 성공 버튼 -->
+    <button class="btn btn--success">
+        <span class="btn__text">확인</span>
+    </button>
+
+    <!-- 🚫 비활성화 버튼 -->
+    <button class="btn btn--disabled">
+        <span class="btn__text">비활성</span>
+    </button>
+  </div>
+
+</body>
+</html>
