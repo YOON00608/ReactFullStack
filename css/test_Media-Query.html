@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>미디어 쿼리 실습 문제</title>
+  <style>
+    .card{
+        font-size: 16px;
+        background: #3498db;
+        text-align: center;
+        
+        /* 걍 재미로 넣은 거 */
+        padding: 16px;
+        margin: 0 auto;
+        border-radius: 10px;
+        font-family: sans-serif;
+        font-weight: bold;
+        color: white;
+    }
+
+    @media(min-width:768px){
+        .card{
+            font-size: 20px;
+            background: #2ecc71;
+        }
+    }
+
+    @media(min-width:1024px){
+        .card{
+            font-size: 24px;
+            background: #9b59b6;
+        }
+    }
+  </style>
+  </style>
+</head>
+<body>
+  <div class="card">반응형 카드입니다</div>
+</body>
+</html>
