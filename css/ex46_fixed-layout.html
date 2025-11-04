@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고정 레이아웃을 반응형으로 전환해보기</title>
+    <style>
+        
+        .container{
+            flex-wrap: wrap;
+            background: #ecf0f1;
+            display: flex;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        /* 공통 박스 스타일 */
+        .box{
+            flex: 1 1 100%;
+            padding: 20px;
+            text-align: center;
+            background: #3498db;
+            color: white;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        
+        /* flex : flex-grow, flex-shrink, flex-basis 축약속성 */
+        /* 태블릿 이상 */
+        @media(min-width : 768px){
+            .box{
+                flex: 1 1 45%;
+            }
+        }
+
+        /* 데스크탑 이상 */
+        @media(min-width : 1200px){
+            .box{
+                flex: 1 1 30%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">박스1</div>
+        <div class="box">박스2</div>
+        <div class="box">박스3</div>
+    </div>
+</body>
+</html>
