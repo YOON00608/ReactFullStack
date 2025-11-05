@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text-hover</title>
+    <!-- h1 태그에 마우스를 올렸을 때
+     글자 색이 빨간색으로 변하고
+     글자 간격이 4px 증가 -->
+     <style>
+        body{
+            margin: 0;
+            display: flex;
+            padding: 40px;
+        }
+
+        .red{
+            border: 2px solid #c4c4c4;
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            margin: auto;
+            transition: color 0.4s ease, letter-spacing 0.4s ease;
+        }
+
+        h1:hover{
+            color: tomato;
+            letter-spacing: 4px;
+        }
+
+     </style>
+</head>
+<body>
+    <h1 class="red">Hover Text</h1>
+</body>
+</html>
