@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드 영역 연습</title>
+    <style>
+        /* 전체 4열 그리드 */
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: auto;
+        gap: 16px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 18px;
+    }
+    .nav{
+        grid-column: 1/5;
+        background: #333;
+        color: white;
+        padding: 1rem;
+        border-radius: 10px;
+    }
+
+    .hero{
+        grid-column: 1/3;
+        padding: 1rem;
+        background: rgb(255, 241, 40);
+        border-radius: 10px;
+    }
+
+    .promo{
+        grid-column: 3/5;
+        padding: 1rem;
+        background: cornflowerblue;
+        border-radius: 10px;
+    }
+
+    .quick-links{
+        grid-column: 1/2;
+        background: white;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: 1rem;
+    }
+
+    .feed{
+        grid-column: 2/4;
+        padding: 1rem;
+        background: #ddd;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 10px;
+    }
+
+    .feed .card{
+        background: #eee;
+        border-radius: 8px;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .ads {
+  grid-column: 4/5;
+  border-radius: 10px;
+  background: #d3d3d3;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <!-- 4열 기반에서 일부 요소는 2열, 3열을 병합해서 사용
+        상단 : 네비게이션(전체 너비)
+        두번째 줄 : hero(2열 병합), promp(2열 병합)
+        세번째 줄 : 좌측 1열(quik-links), 중앙(feed 2열), 우측(ads 1열)
+        feed 내부는 중첩 그리드 카드(가로 3열) 배치 -->
+
+    <div class="grid-container">
+        <header class="nav">내비게이션</header>
+            <section class="hero">Hero (2열 병합)</section>
+            <section class="promo">Promo (2열 병합)</section>
+        <aside class="quick-links">Quick Links</aside>
+    <main class="feed">
+        <div class="card">피드 1</div>
+        <div class="card">피드 2</div>
+        <div class="card">피드 3</div>
+        <div class="card">피드 4</div>
+        <div class="card">피드 5</div>
+        <div class="card">피드 6</div>
+    </main>
+        <aside class="ads">광고 영역</aside>
+    </div>
+</body>
+</html>
