@@ -165,30 +165,69 @@
         color: #666;
     }
 
+    footer .footer-links {
+        margin-top: 8px;
+        font-size: 0.8rem;
+    }
+
+    footer .footer-links a {
+        color: #666;
+        text-decoration: none;
+        margin: 0 4px;
+    }
+
+    footer .footer-links a:hover {
+        color: #168a1b;
+    }
+
     @media (max-width: 1024px) {
         main {
             grid-template-columns: 6fr 4fr;
         }
     }
 
+    /* 모바일 */
     @media (max-width: 768px) {
-        header {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .main-menu {
-            grid-template-columns: 1fr 1fr;
-            grid-auto-rows: 50px;
-        }
-
-        main {
-            grid-template-areas:
-                "ad"
-                "hero";
-            grid-template-columns: 1fr;
-        }
+    header {
+      flex-direction: column;
+      align-items: flex-start;
     }
+
+    .main-menu {
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: 50px;
+    }
+
+    /* 고정형 세로 비율 구조 */
+    main {
+      display: grid;
+      grid-template-areas:
+          "ad"
+          "hero";
+      grid-template-columns: 1fr;
+      grid-template-rows: 70% 30%; 
+      height: 500px; 
+      gap: 10px;
+      padding: 15px;
+    }
+
+    .ad-area, .hero-area {
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .ad-slide, .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    }
+
+
+
 </style>
 </head>
 <body>
@@ -233,6 +272,12 @@
     <hr>
     <footer>
         <p>© Little Mouse.</p>
+        <div class="footer-links">
+        <a href="#">회사소개</a> |
+        <a href="#">이용약관</a> |
+        <a href="#">개인정보처리방침</a> |
+        <a href="#">고객센터</a>
+    </div>
     </footer>
 
 <script>
