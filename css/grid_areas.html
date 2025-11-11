@@ -9,11 +9,17 @@
     .grid-container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 50px 100px 80px;
         grid-auto-rows: auto;
         gap: 16px;
         max-width: 1200px;
         margin: 0 auto;
         padding: 18px;
+        grid-template-areas:
+             "nav nav nav nav"
+             "hero hero promo promo"
+             "hero hero promo promo"
+             "quick-links feed feed ads ";
     }
     .nav{
         grid-column: 1/5;
@@ -21,6 +27,7 @@
         color: white;
         padding: 1rem;
         border-radius: 10px;
+        grid-area: nav;
     }
 
     .hero{
@@ -28,6 +35,7 @@
         padding: 1rem;
         background: rgb(255, 241, 40);
         border-radius: 10px;
+        grid-area: hero;
     }
 
     .promo{
@@ -35,6 +43,7 @@
         padding: 1rem;
         background: cornflowerblue;
         border-radius: 10px;
+        grid-area: promo;
     }
 
     .quick-links{
@@ -43,15 +52,18 @@
         border: 1px solid #eee;
         border-radius: 10px;
         padding: 1rem;
+        grid-area: quick-links;
     }
 
     .feed{
         grid-column: 2/4;
+        border-radius: 8px;
         padding: 1rem;
         background: #ddd;
         display: grid;
         grid-template-columns: repeat(3,1fr);
         gap: 10px;
+        grid-area: feed;
     }
 
     .feed .card{
@@ -62,12 +74,16 @@
     }
 
     .ads {
-  grid-column: 4/5;
-  border-radius: 10px;
-  background: #d3d3d3;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
+        grid-column: 4/5;
+        border-radius: 10px;
+        background: #d3d3d3;
+        color: #fff;
+        padding: 1rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-area: ads;
     }
     </style>
 </head>
