@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>회원가입 로딩중...</title>
+<style>
+    body {
+        margin: 0;
+        font-family: "Noto Sans KR", sans-serif;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        color: #333;
+    }
+
+    .spinner {
+        width: 60px;
+        height: 60px;
+        border: 6px solid #ccc;
+        border-top: 6px solid #2EB500;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 15px;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    p {
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+</style>
+</head>
+<body>
+    <div class="spinner"></div>
+    <p>잠시만 기다려주세요.</p>
+
+</body>
+</html>
