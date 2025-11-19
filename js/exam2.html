@@ -25,6 +25,25 @@
         let final = age < 19 ? ticket * 0.8 : ticket;
         console.log(`티켓 가격 : ${final}`);
 
+        //주문 금액이 30,000원 이상이거나**VIP 회원**이면 무료배송이다.
+        // 무료배송 여부를 **불리언 값** 으로 나타내시오
+
+        let orderPrice = 28000;
+        let isVIP = true;
+        
+        let isFree = (orderPrice >= 30000 || isVIP === true);
+
+        // 현재 온도가 28도 이상이면 “에어컨 작동”, 18도 이하면 “난방 작동”,
+        // 그 사이면 “대기 상태”를 출력하는 프로그램을 작성하시오  
+        // (중첩 삼항연산자를 사용하세요)
+
+        // 입력
+        let temperature = 23;
+        
+        let mode = (temperature >= 28) ? "에어컨 작동" :
+           (temperature <= 18) ? "난방 작동" :
+                                 "대기 상태";
+
     </script>
 </body>
 </html>
