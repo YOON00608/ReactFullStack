@@ -14,12 +14,59 @@
         };
 
         console.log('프로그램 종료');
-
+        // if - else문은 삼항연산자와 역할이 같다.
         let isMember =  false;
         if(isMember){
             console.log('회원 전용 페이지에 입장 하였습니다.') // true 페이지
         } else {
             console.log('로그인이 필요합니다.') // false 페이지
+        }
+
+        // 여러개의 조건을 비교하고 싶을 때
+        // 1. 논리연산자 사용하기
+        let score = 80
+        let result = score < 0 && score > 100;
+        
+        console.log(result)
+
+        // 2. if - else if 문 사용하기
+        if(score >= 90){
+            console.log("A");
+        } else if (score >= 80){
+            console.log("B");
+        } else if (score >= 70){
+            console.log("C")
+        } else if(score >= 60){
+            console.log("D");
+        } else {
+            console.log("F");
+        }   
+
+        // if문 끼리의 중첩
+
+        let loggedIn = true;
+        let role = "admin";
+
+        if(loggedIn){
+            if(role === "admin"){
+                console.log("관리자 페이지에 접근합니다");
+            } else{
+                console.log("일반 사용자 페이지에 접근합니다.")
+            }
+        } else {
+            console.log("로그인이 필요합니다.")
+        }
+
+        // 조건문에서 자주 사용되는 패턴
+        // 1. 짝수, 홀수 판별할 때
+        // 숫자를 2로 나눈 나머지를 가지고 짝수, 홀수를 판단한다.
+        let num = 17;
+        // 짝수, 홀수를 판별하여 17은 홀수입니다를 출력하기
+
+        if (num % 2 === 0){
+            console.log(`${num}은 짝수다`);
+        } else {
+            console.log(`${num}은 홀수다`);
         }
     </script>
 </body>
