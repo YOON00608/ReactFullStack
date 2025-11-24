@@ -195,7 +195,17 @@
         console.log("-----------------")
 
         // 스프레드 연산자.
-        // 깊은 복사 : 
+        // ...
+        // 배열이나 객체의 값을 "펼쳐서" 복사하거나 전달할 때 사용하는 문법
+
+        console.log(...c);  // 1,2,3,4
+
+        console.log("-----------------")
+
+        let fruits = ['apple', 'banana'];
+        let newfruits = [...fruits];
+
+        console.log(newfruits);
 
     </script>
 </body>
