@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+</head>
+<body>
+    <script>
+        // 객체(object)
+        // 현실세계의 사물을 디지털(코드)로 표현하지 위한 방법
+        // 여러 데이터를 하나로 묶어서 저장하는 구조
+
+        // 예를 들어, 사람의 정보를 변수로만 저장을 한다면 어떨까?
+        let name = "홍길동";
+        let age = 20;
+        let job = "개발자";
+
+        // person 하나만 보면 "이 사람의 정보"가 다 들어있다는 걸 알 수 있다.
+        let person = {
+            name : "홍길동",
+            age : 20,
+            job : "개발자"
+        }
+
+        // 객체의 기본 구조
+        /*
+        let 객체이름 = {
+            키1 : 값1,  -> property
+            키2 : 값2,
+            키3 : 값3
+        }
+        */
+
+        // 각각의 프로퍼티는 콤마(,)로 구분
+        // 키는 따옴표로 묶지 않는다.
+        
+        ////////////////////////////////////
+
+        // 객체의 값 꺼내기
+
+        // 1. 점 표기법
+        // 객체이름.키
+
+        console.log(person.name);
+        // 가장 많이 사용되는 방식
+        
+        console.log("------------------------")
+
+        // 2. 대괄호 표기법
+        // 객체이름["키"]
+        
+        console.log(person["name"]);
+
+        console.log("------------------------")
+
+        // new object() -> 생정자
+        // 비어있는 객체 리터럴({ })을 만드는 것과 같다.
+        let user = new Object();
+
+        // 없는 프로퍼티에 값을 넣으면 추가 된다.
+        user.name = "김자바";
+        user.age = 20;
+
+        console.log(user);
+
+        console.log("------------------------")
+
+        // 객체에서 프로퍼티를 삭제하는 방법
+        delete user.age;
+        console.log(user);
+
+        console.log("------------------------")
+
+        // in : 특정 프로퍼티가 객체에 포함되어 있는지 검사하는 연산자
+        // 있으면 true, 없으면 false
+        console.log('name' in user);
+
+        console.log("------------------------")
+
+        // for in
+        // 객체에 포함된 모든 프로퍼티에 대해 순회
+        for(i in person){
+            console.log(`${i} = ${person[i]}`);
+        }
+
+        console.log("------------------------")
+
+        // 객체의 value로 또 다른 객체가 들어갈 수 있다.
+        let circle = {
+            center : {x : 1.0, y : 2.0},
+            radius : 2.5
+        }
+        // 객체의 value에 또다른 객체가 들어있을 대
+        // value에 접근하는 방법
+        console.log(circle.center.x);
+
+        console.log("------------------------")
+
+        // 객체 안에 포함된 함수 -> 메서드
+        let member = {
+            name : '민수',
+            age : 20,
+            // sayHello: function(){   // 메서드를 정의
+            // console.log('안녕하세요!');
+            // }
+            sayHello(){ // 축약문법
+            console.log(`안녕히세요! 저는 ${this.name}입니다.`);
+            },
+            growOlder(){
+                this.age++;
+                console.log(`이제 ${this.age}살이 되었습니다.`);
+            }
+        }
+
+        
+        
+
+        // this
+        // 호출한 자기자신을 의미합니다.
+
+        // 메서드를 사용하기 위해서는 정의돤 메서드를 호출해야 한다.
+        // 메서드를 호출하는 방법
+
+        // 객체이름.메서드명();
+        member.sayHello();
+        member.growOlder();
+
+        console.log("------------------------")
+
+        // calculator 라는 이름의 객체를 만들어라.
+        // add(a,b) : 두 수 a와 b를 더한 값을 출력
+        // subtract(a,b) : 두 수 a와 b의 차를 출력
+        // multiply(a,b) : 두 수 a와 b의 곱을 출력
+        // divide(a,b) : 두 수를 나눈 값을 출력하되, b가 0이면
+        //               "0으로 나눌 수 없습니다." 출력
+        
+        const calculator = {
+            // 더하기
+            add(a,b){
+                const result = a + b;
+                console.log(`값 : ${result}`);
+            },
+
+            // 빼기
+            subtract(a,b){
+                const result = a - b;
+                console.log(`값 : ${result}`);
+            },
+
+            // 곱하기
+            multiply(a,b){
+                const result = a * b;
+                console.log(`값 : ${result}`);
+            },
+
+            // 나누기
+            divide(a,b){
+                if (b === 0){
+                    console.log("0으로 나눌 수 없습니다.")
+                } else {
+                    const result = a / b;
+                    console.log(`값 : ${result}`);
+                }
+            }      
+        };
+
+        calculator.add(100,10);
+        calculator.subtract(100,10);
+        calculator.multiply(100,10);
+        calculator.divide(100,10);
+        calculator.divide(100,0);
+
+    </script>
+</body>
+</html>
