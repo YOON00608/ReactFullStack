@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단 만들기</title>
+</head>
+<body>
+    <p> 단: 
+    <input id="dan">
+    <input type="button" value="계산" onclick="gugu();">
+    </p>
+
+    <hr>
+
+    <div id="disp">
+        이곳에 수가 나옵니다.
+    </div>
+
+    <script>
+        function gugu(){
+            var m_dan = document.getElementById("dan").value;
+
+            if(m_dan.trim()== ''){
+                alert("값을 입력해야 합니다.")
+                return; 
+            }
+
+            if(m_dan<2 || m_dan>9){
+                alert("2~9만 입력해 주세요.")
+                return;
+            }
+
+            var str = "";
+
+            for(var i = 1; i<10; i++){
+                str = str + m_dan + 'X' + i + '=' + (m_dan * i) + "<br>";
+            }
+
+            var gugudan = document.getElementById("disp");
+            gugudan.innerHTML = str;
+        }
+
+    </script>
+</body>
+</html>
