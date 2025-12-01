@@ -27,6 +27,7 @@
         const recentList = document.querySelector("#recent-list");
         const addBtn = document.querySelector("#add-recent");
 
+        // 1
         input.addEventListener("input", function(){
             const text = input.value.trim();
             preview.textContent = text
@@ -34,6 +35,7 @@
             : "검색어 미리보가 : (없음)";
         });
 
+        // 2
         addBtn.addEventListener("click",function(){
             const text = input.value.trim();
             if (!text) return;
@@ -44,6 +46,7 @@
             recentList.prepend(li);
         });
 
+        // 3
         recentList.addEventListener("click",function(event){
             const target = event.target;
 
