@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>좋아요</title>
+</head>
+<body>
+    <ul id="comment-list">
+        <li data-id="1">
+            <span class="text">첫 번째 댓글입니다.</span>
+            <button class="like-btn">
+                👍좋아요 <span class="count">0</span>
+            </button>
+            <button class="delete-btn">삭제</button>
+        </li>
+        <li data-id="2">
+            <span class="text">두 번째 댓글입니다.</span>
+            <button class="like-btn">
+                👍좋아요 <span class="count">3</span>
+            </button>
+            <button class="delete-btn">삭제</button>
+        </li>
+
+        <!-- <ul>에 이벤트를 한 번만 걸고,
+            각 <li>안에 "삭제"버튼과 "좋아요"버튼을 구분해서 처리
+            1) 삭제버튼 누르면 <li>삭제하기
+            2) 좋아요 버튼 누르면 count 증가시키기 -->
+
+        <script>
+            const commentList = document.querySelector("#comment-list");
+
+            // 이벤트 위임
+            commentList.addEventListener("click",function(event){
+                const target = event.target;
+
+                 // 1) 삭제 버튼 클릭
+                if(target.classList.contains("delete-btn")){
+                    const li = target.closest("li");
+                    if (li) li.remove();
+                }
+
+                 // 2) 좋아요 버튼 클릭
+                if(target.classList.contains("like-btn") || target.closest(".like-btn")){
+                    const likeBtn = target.closest(".like-btn");
+                    const countSpan = likeBtn.querySelector(".count");
+
+                    let current = Number(countSpan.textContent);
+                    countSpan.textContent = current + 1;
+                }
+            });
+        </script>
+    </ul>
+</body>
+</html>
