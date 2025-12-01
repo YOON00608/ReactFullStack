@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <style>
+        .nav li{
+            display: inline-block;
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+
+        .nav li.active{
+            background-color: #3498db;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <UL class="nav" id="nav">
+        <li class ="active"><a href="#home">홈</a></li>
+        <li class ="active"><a href="#aboue">소개</a></li>
+        <li class ="active"><a href="#products">상품</a></li>
+        <li class ="active"><a href="#contact">문의</a></li>
+    </UL>
+
+    <!-- <ul>에다 이벤트 리스너를 한 번만 등록한다
+        사용자가 클릭한 <li>에 active클래스를 추가한다.
+        나머지 모든 형제 <li>에서 active클래스를 제거한다.
+        <a>를 클릭해도 같은 동작이 수행 되어야 한다. -->
+</body>
+</html>
