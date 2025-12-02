@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화살표 함수</title>
+</head>
+<body>
+    <script>
+      // 기존
+      const double = (x) => {return x * 2};
+    
+      // 중괄호가 없으면 결과가 자동으로 return 된다.
+      const doubleShort = x => x * 2;
+
+      // 매개변수가 없으면 소괄호를 무조건 써야 한다.
+      const getRandom = () => Math.random();
+
+      // 객체 리터럴을 반환할 때 객체를 소괄호로 한 번 감싸야 한다.
+      const makeUser = (name,age) => ({name:name,age:age});
+
+      // 단축 프로퍼티
+      // key와 value가 동일한 변수명일 때 단축이 가능하다.
+      const makeUserShort = (name,age) => ({name,age});
+    </script>
+</body>
+</html>
