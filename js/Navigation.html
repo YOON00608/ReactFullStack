@@ -29,5 +29,25 @@
         사용자가 클릭한 <li>에 active클래스를 추가한다.
         나머지 모든 형제 <li>에서 active클래스를 제거한다.
         <a>를 클릭해도 같은 동작이 수행 되어야 한다. -->
+
+    <script>
+    const nav = document.getElementById("nav");
+
+    nav.addEventListener("click", function(event) {
+        // 클릭한 요소가 li가 아니면 li 부모를 찾는다.
+        const li = event.target.closest("li");
+
+        // li가 아닌 곳을 클릭한 경우 방지
+        if (!li) return;
+
+        // 모든 li에서 active 제거
+        const allItems = nav.querySelectorAll("li");
+        allItems.forEach(item => item.classList.remove("active"));
+
+        // 클릭된 li에 active 추가
+        li.classList.add("active");
+    });
+    </script>
+
 </body>
 </html>
