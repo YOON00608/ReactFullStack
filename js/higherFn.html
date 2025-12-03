@@ -102,6 +102,47 @@
         console.log(add10(3));      // 13
 
         // "설정값을 기억하는 함수"와 같은 방식으로 실무에서는 많이 쓰인다.
+
+        // 실무에서 고차 함수가 많이 쓰이는 곳
+        
+        // 1. 이벤트처리
+        // addEventListener("이벤트",콜백함수);
+
+        // 특정 최소 나이 이상만 남기는 필터 함수
+        // makeAgefiter(minAge)라는 함수 만들기
+        // 이 함수는 minAge를 인자로 받아서 age 프로퍼티를 가진
+        // 객체 배열에서 age >= minAge인 사람만 남기는 필터함수를 반환한다.
+
+        const users = [
+            {name : 'A', age:15},
+            {name : 'B', age:20},
+            {name : 'C', age:30},
+        ]
+
+        function makeAgeFilter(minAge){
+            return function(users){
+               return user.age >= minAge;
+            }
+        }
+        
+        const adultFiter = makeAgeFilter(18);
+        // const adultFiter = function(user){
+        //      return user.age >= minAge;
+        // }
+        
+        const adult = users.filter(adultFiter);
+        // const adult = users.filter(function(user){
+        //      return user.age >= minAge;
+        // }
+
+        console.log(adult);
+        
+
+
+
+
+
+
     </script>
 </body>
 </html>
