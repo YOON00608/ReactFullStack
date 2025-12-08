@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>jsonplaceholder</h1>
+    <button id = "loadPostBtn">게시글 1개 불러오기</button>
+    <h2>결과</h2>
+    <div id = "result"></div>
+    <script>
+        // 가상의 서버 역할 -> jsonplaceholder
+        // 요청 주소 -> 'https://jsonplaceholder.typicode.com/posts/1'
+        
+        // 버튼을 눌렀을 때 jsonplaceholder에게 게시글 1건을 달라고 요청하여
+        // json()메서드가 parse()와 같은 역할을 한다.
+        // ID: xxx
+        // 제목 : xxx 
+        // 내용 : xxx
+        // 형태로 출력하기
+
+        const btn = document.getElementById("loadPostBtn");
+        const resultDiv = document.getElementById("result");
+
+        btn.addEventListener("click", () => {
+
+        // jsonplaceholder에게 게시글 1건 요청
+        fetch("https://jsonplaceholder.typicode.com/posts/1")
+            .then(res => res.json()) // json() = JSON.parse()
+            .then(data => {
+
+                // div 태그에 내용 출력
+                resultDiv.innerHTML = `
+                    <div><strong>ID:</strong> ${data.id}</div>
+                    <div><strong>제목:</strong> ${data.title}</div>
+                    <div><strong>내용:</strong> ${data.body}</div>
+                `;
+            })
+            .catch(err => {
+                resultDiv.innerHTML =
+                `<div style="color:red;">에러 발생: ${err}</div>`;
+            });
+        });
+    </script>
+</body>
+</html>
